@@ -17,10 +17,21 @@ div.append(input1, input2, button);
 button.addEventListener("click", (event) => {
   event.preventDefault();
   const valueUL = input1.value;
-  const valueOL = input2.value;
+  const valueLI = input2.value;
 
-  const listCheck = document.querySelectorAll("ul");
-  listCheck.forEach();
-  valueOL = "";
-  valueUL = "";
+  const listcheck = document.querySelectorAll("ul");
+  listcheck.forEach((list) => list.remove());
+  input1.value = "";
+  input2.value = "";
+
+  for (let i = 0; i < valueUL; i++) {
+    const ul = document.createElement("ul");
+    ul.innerText = "unordered";
+    for (let j = 0; j < valueLI; j++) {
+      const ol = document.createElement("ol");
+      ol.innerText = "ordered";
+      ul.appendChild(ol);
+    }
+    document.body.appendChild(ul);
+  }
 });
